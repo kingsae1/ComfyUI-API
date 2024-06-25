@@ -51,7 +51,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
         -r https://raw.githubusercontent.com/ltdrdata/ComfyUI-Impact-Pack/Main/requirements.txt \
         -r https://raw.githubusercontent.com/ltdrdata/ComfyUI-Impact-Subpack/main/requirements.txt \
         -r https://raw.githubusercontent.com/ltdrdata/ComfyUI-Inspire-Pack/main/requirements.txt \
-        -r https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/requirements.txt
+        -r https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/requirements.txt \ 
+        -r https://gist.githubusercontent.com/kingsae1/dc68ed0fdab55859cecb4a68c1218078/raw/bf8721fdda0636baba606f6ad83b29f93da878d5/comfy.requirements.txt
 
 # Dependencies for more, with few hand-pick:
 # 'cupy-cuda12x' for Frame Interpolation
