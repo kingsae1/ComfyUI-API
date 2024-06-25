@@ -25,6 +25,7 @@ services:
     image: "yanwk/comfyui-boot"
     ports:
       - "8188:8188"
+      - "8192:8189"
     volumes:
       - "./storage:/home/runner"
     environment:
@@ -51,6 +52,7 @@ services:
     image: "yanwk/comfyui-boot"
     ports:
       - "8191:8188"
+      - "8193:8189"
     volumes:
       - "./storage:/home/runner"
     environment:

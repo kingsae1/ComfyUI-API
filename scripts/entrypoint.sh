@@ -31,7 +31,7 @@ fi ;
 
 
 echo "########################################"
-echo "[INFO] Starting ComfyUI..."
+echo "[INFO] Starting ComfyUI...8188"
 echo "########################################"
 
 export PATH="${PATH}:/home/runner/.local/bin"
