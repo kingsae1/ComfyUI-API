@@ -13,9 +13,9 @@ services:
       - "./storage:/home/runner"
     command: "chown -R runner:runner /home/runner"
 
-  comfyui:
+  comfyui-0:
     init: true
-    container_name: comfyui
+    container_name: comfyui-0
     depends_on:
       file-chown:
         condition: service_completed_successfully
@@ -37,4 +37,30 @@ services:
           devices:
             - driver: nvidia
               device_ids: ['0']
+              capabilities: [gpu]
+
+  comfyui-1:
+    init: true
+    container_name: comfyui-1
+    depends_on:
+      file-chown:
+        condition: service_completed_successfully
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "yanwk/comfyui-boot"
+    ports:
+      - "8191:8188"
+    volumes:
+      - "./storage:/home/runner"
+    environment:
+      - CLI_ARGS=
+    security_opt:
+      - "label=type:nvidia_container_t"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['1']
               capabilities: [gpu]
